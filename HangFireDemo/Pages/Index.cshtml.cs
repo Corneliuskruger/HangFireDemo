@@ -33,7 +33,7 @@ namespace HangFireDemo.Pages
             {
                 foreach (var job in jobs)
                 {
-                    RecurringJob.AddOrUpdate(job.JobId, () => StartLongRunning(), "55 11 * * *"); // job.Schedule);
+                    RecurringJob.AddOrUpdate(job.JobId, () => StartLongRunning(), job.Schedule);
                 }
             }
         }
